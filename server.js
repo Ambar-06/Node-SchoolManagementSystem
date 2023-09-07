@@ -1,15 +1,10 @@
-
 const http = require('http');
-const express = require('express');
-const morgan = require('morgan');    // This is to get the activity on terminal
+const app = require("./app/app.js")
 
-const app = express();
 const PORT= process.env.PORT || 8000;
 
-// console.log(app);
+console.log(app);
+const server = http.createServer(app)
 
-// =======MIDDLEWARE=========
 
-app.use(morgan("dev"));
-
-app.listen(PORT, console.log(`Server listening to port ${PORT}`));
+server.listen(PORT, console.log(`Server listening to port ${PORT}`));
