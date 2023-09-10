@@ -1,9 +1,10 @@
 const http = require('http');
-const app = require("./app/app.js")
+require('./config/dbConnect');
+const app = require("./app/app.js");
 
 const PORT= process.env.PORT || 8000;
 
-console.log(app);
+// console.log(app);
 const server = http.createServer(app)
 
 
